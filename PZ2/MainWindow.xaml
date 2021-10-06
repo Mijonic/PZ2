@@ -1,0 +1,35 @@
+﻿<Window x:Class="PZ2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PZ2"
+        mc:Ignorable="d"
+        Background="#b8b894"
+        Title="PZ2" Height="1501.32" Width="1500">
+
+    <Grid Margin="0,0,0,84">
+
+
+        <ScrollViewer Margin="0,0,0,-79" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible">
+            <Canvas Name="mainCanvas" MouseRightButtonDown="MainCanvas_MouseRightButtonDown" Background="#b8b894" Width="1300" Height="1300" Margin="0,120,0,0" >
+                <Canvas.LayoutTransform> 
+                    <ScaleTransform
+                        ScaleY="{Binding ElementName=slider, Path=Value}"
+                        ScaleX="{Binding ElementName=slider, Path=Value}">
+                    </ScaleTransform>
+
+                   </Canvas.LayoutTransform>
+            </Canvas>
+        </ScrollViewer>
+        <DockPanel Height="90" Margin="15,10,5,0" VerticalAlignment="Top" Width="1472">
+            <Label x:Name="label" FontSize="30" Foreground="White" Content="Use slider for Zoom" Height="80" VerticalAlignment="Bottom" Width="282" Margin="300,0,-200,0"/>
+            <Slider x:Name="slider" Height="21" Minimum="1" Maximum="5"  VerticalAlignment="Top" Width="606" Margin="0,30,0,0" />
+
+        </DockPanel>
+
+
+
+
+    </Grid>
+</Window>
